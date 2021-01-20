@@ -14,11 +14,16 @@ function App() {
   const rangeController = useRange(1, 0.23, 4)
 
   useEffect(() => {
-    setLanguages(speechSynthesis.getVoices())
+    fetchVoices()
   }, [])
 
   const onChangeHandler = (e) => {
     setCustomText(e.target.value)
+  }
+
+  const fetchVoices = async () => {
+    const voices = await speechSynthesis.getVoices()
+    setLanguages(voices)
   }
 
   const cardOnClick = (cardText, idx) => {
@@ -40,6 +45,9 @@ function App() {
   }
 
   const toggleModal = () => {
+    if (languages.length === 0) {
+      setLanguages(speechSynthesis.getVoices())
+    }
     document.getElementById('text-box').classList.toggle('show')
   }
 
@@ -107,7 +115,7 @@ function App() {
           </div>
           <h3>Choose Voice</h3>
           <select onChange={changeLanguage}>
-            {languages &&
+            {languages.length > 0 &&
               languages.map((item) => (
                 <option value={item.lang} key={item.name}>
                   {item.lang}
@@ -120,7 +128,7 @@ function App() {
             value={customText}
             onChange={onChangeHandler}
           ></textarea>
-          <input type="file" onChange={readTxt} />
+          <input type="file" onChange={readTxt} style={{ margin: '5px' }} />
           <button className="btn" onClick={startReading}>
             Read Text
           </button>

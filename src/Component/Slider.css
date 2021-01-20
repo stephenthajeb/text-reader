@@ -93,3 +93,12 @@ input[type='range']::-ms-thumb {
 .slider-wrapper > .range-container {
   justify-self: end;
 }
+
+#label-desc {
+  position: absolute;
+  top: -15px;
+  left: 10px;
+  width: 80px;
+  padding: 3px 0;
+  text-align: center;
+}

@@ -17,13 +17,16 @@ const Slider = ({ changeRate, rangeController }) => {
 
   const labelEffect = () => {
     const label = document.getElementById('range-label')
+    const descLabel = document.getElementById('label-desc')
     if (label) {
       label.style.left = `${rangeController.value * (100 / 10) - 40 / 2}px`
       scale(rangeController.value, 0.25, 10, 1, -1)
     }
     label.style.visibility = 'visible'
+    descLabel.style.visibility = 'hidden'
     setTimeout(() => {
       label.style.visibility = 'hidden'
+      descLabel.style.visibility = 'visible'
     }, 800)
   }
 
@@ -37,8 +40,11 @@ const Slider = ({ changeRate, rangeController }) => {
         value={rangeController.value}
         onChange={(e) => onChangeHandler(e)}
       />
-      <label id="range-label" for="range">
+      <label id="range-label" htmlFor="range">
         {rangeController.value}
+      </label>
+      <label id="label-desc" htmlFor="range">
+        speed
       </label>
     </div>
   )
