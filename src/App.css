@@ -5,7 +5,8 @@
 }
 
 body {
-  background: #ffefea;
+  /* background: #ffefea; */
+  background: #b1dcff;
   font-family: 'Lato', sans-serif;
   min-height: 100vh;
   margin: 0;
@@ -22,7 +23,7 @@ h1 {
 
 .btn {
   cursor: pointer;
-  background-color: darksalmon;
+  background-color: #4a95d3;
   border: 0;
   border-radius: 4px;
   color: #fff;
@@ -63,7 +64,7 @@ select:focus {
 }
 
 .text-box select {
-  background-color: darksalmon;
+  background-color: #4a95d3;
   border: 0;
   color: #fff;
   font-size: 12px;
@@ -72,7 +73,7 @@ select:focus {
 }
 
 .text-box textarea {
-  border: 1px #dadada solid;
+  border: 2px #57b3fd solid;
   border-radius: 4px;
   font-size: 16px;
   padding: 8px;
@@ -81,6 +82,10 @@ select:focus {
   height: 150px;
 }
 
+textarea:focus,
+input:focus {
+  outline: #57b3fd;
+}
 .text-box .btn {
   width: 100%;
 }
