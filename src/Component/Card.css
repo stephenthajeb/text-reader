@@ -1,0 +1,20 @@
+.box img {
+  width: 100%;
+  object-fit: cover;
+  height: 200px;
+}
+
+.box.active {
+  box-shadow: 0 0 10px 5px darksalmon;
+}
+
+.box {
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: box-shadow 0.2s ease-out;
+}
+

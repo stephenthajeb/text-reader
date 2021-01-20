@@ -1,5 +1,5 @@
 {
-  "name": "speech-to-text-reader",
+  "name": "text-reader",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
